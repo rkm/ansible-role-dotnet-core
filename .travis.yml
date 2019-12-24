@@ -2,6 +2,8 @@
 
 # Sourced from https://github.com/geerlingguy/ansible-role-java/
 
+os: linux
+
 language: python
 python:
   - "3.7"
@@ -11,7 +13,7 @@ services: docker
 env:
   global:
     - ROLE_NAME: dotnet-core
-  matrix:
+  jobs:
     - MOLECULE_DISTRO: centos7
     - MOLECULE_DISTRO: centos8
     - MOLECULE_DISTRO: debian10
