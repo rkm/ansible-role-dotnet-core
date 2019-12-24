@@ -13,7 +13,7 @@ services: docker
 env:
   global:
     - ROLE_NAME: dotnet-core
-  jobs:
+  molecule_distro:
 #    - MOLECULE_DISTRO: centos7
 #    - MOLECULE_DISTRO: centos8
 #    - MOLECULE_DISTRO: debian10
@@ -21,6 +21,10 @@ env:
 #    - MOLECULE_DISTRO: fedora31
 #    - MOLECULE_DISTRO: ubuntu1604
     - MOLECULE_DISTRO: ubuntu1804
+  sdk_version:
+    - 2.1
+    - 2.2
+    - 3.0
 
 install:
   - pip install molecule docker
