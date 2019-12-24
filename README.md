@@ -1,8 +1,8 @@
 Ansible Role: .Net Core SDK/Runtime 
 =========
 
-[![Build Status](https://travis-ci.org/ocha/ansible-role-dotnet-core.svg?branch=master)](https://travis-ci.org/ocha/ansible-role-dotnet-core)
-[![Ansible Galaxy](https://img.shields.io/ansible/role/15673.svg)](https://galaxy.ansible.com/ocha/dotnet-core)
+[![Build Status](https://travis-ci.org/rkm/ansible-role-dotnet-core.svg?branch=master)](https://travis-ci.org/rkm/ansible-role-dotnet-core)
+[![Ansible Galaxy](https://img.shields.io/ansible/role/15673.svg)](https://galaxy.ansible.com/rkm/dotnet-core)
 
 Installs the [.Net Core SDK/Runtime](https://www.microsoft.com/net) for Ubuntu/RHEL/CentOS.
 
@@ -31,7 +31,7 @@ Example Playbook
 
     - hosts: servers
       roles:
-         - ocha.dotnet-core
+         - rkm.dotnet-core
 
 License
 -------
@@ -41,4 +41,4 @@ MIT / BSD
 Author Information
 ------------------
 
-This role was created by [Iuri Gagnidze](https://www.github.com/ocha)
+This role was created by [Iuri Gagnidze](https://www.github.com/ocha), and modified by [Ruairidh MacLeod](https://www.github.com/rkm)
