@@ -13,18 +13,34 @@ services: docker
 env:
   global:
     - ROLE_NAME: dotnet-core
-  molecule_distro:
-    - MOLECULE_DISTRO: centos7
-    - MOLECULE_DISTRO: centos8
-    - MOLECULE_DISTRO: debian10
-    - MOLECULE_DISTRO: debian9
-    - MOLECULE_DISTRO: fedora31
-    - MOLECULE_DISTRO: ubuntu1604
-    - MOLECULE_DISTRO: ubuntu1804
-  sdk_version:
-    - 2.1
-    - 2.2
-    - 3.0
+  jobs:
+    - MOLECULE_DISTRO='centos7' SDK_VERSION='2.1'
+    - MOLECULE_DISTRO='centos7' SDK_VERSION='2.2'
+    - MOLECULE_DISTRO='centos7' SDK_VERSION='3.0'
+
+    - MOLECULE_DISTRO='centos8' SDK_VERSION='2.1'
+    - MOLECULE_DISTRO='centos8' SDK_VERSION='2.2'
+    - MOLECULE_DISTRO='centos8' SDK_VERSION='3.0'
+
+    - MOLECULE_DISTRO='debian9' SDK_VERSION='2.1'
+    - MOLECULE_DISTRO='debian9' SDK_VERSION='2.2'
+    - MOLECULE_DISTRO='debian9' SDK_VERSION='3.0'
+
+    - MOLECULE_DISTRO='debian10' SDK_VERSION='2.1'
+    - MOLECULE_DISTRO='debian10' SDK_VERSION='2.2'
+    - MOLECULE_DISTRO='debian10' SDK_VERSION='3.0'
+
+    - MOLECULE_DISTRO='ubuntu1604' SDK_VERSION='2.1'
+    - MOLECULE_DISTRO='ubuntu1604' SDK_VERSION='2.2'
+    - MOLECULE_DISTRO='ubuntu1604' SDK_VERSION='3.0'
+
+    - MOLECULE_DISTRO='ubuntu1804' SDK_VERSION='2.1'
+    - MOLECULE_DISTRO='ubuntu1804' SDK_VERSION='2.2'
+    - MOLECULE_DISTRO='ubuntu1804' SDK_VERSION='3.0'
+
+    - MOLECULE_DISTRO='fedora31' SDK_VERSION='2.1'
+    - MOLECULE_DISTRO='fedora31' SDK_VERSION='2.2'
+    - MOLECULE_DISTRO='fedora31' SDK_VERSION='3.0'
 
 install:
   - pip install molecule docker
