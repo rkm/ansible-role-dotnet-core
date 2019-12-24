@@ -3,7 +3,7 @@
   apt:
     name: apt-transport-https
     state: present
-    update_cache: yes
+    update_cache: true
 
 - name: Import Microsoft APT key
   apt_key:
@@ -12,16 +12,22 @@
 
 - name: Add repo for Ubuntu Xenial
   apt_repository:
-    repo: deb [arch=amd64] https://packages.microsoft.com/repos/microsoft-ubuntu-xenial-prod xenial main
+    repo: deb [arch=amd64] https://packages.microsoft.com/repos/\
+          microsoft-ubuntu-xenial-prod xenial main
     filename: "dotnetdev"
     state: present
-    update_cache: yes
-  when: ansible_distribution == "Ubuntu" and ansible_distribution_major_version == "16"
+    update_cache: true
+  when:
+    - ansible_distribution == "Ubuntu"
+    - ansible_distribution_major_version == "16"
 
 - name: Add repo for Ubuntu Bionic
   apt_repository:
-    repo: deb [arch=amd64] https://packages.microsoft.com/repos/microsoft-ubuntu-bionic-prod bionic main
+    repo: deb [arch=amd64] https://packages.microsoft.com/repos/\
+          microsoft-ubuntu-bionic-prod bionic main
     filename: "dotnetdev"
     state: present
-    update_cache: yes
-  when: ansible_distribution == "Ubuntu" and ansible_distribution_major_version == "18"
+    update_cache: true
+  when:
+    - ansible_distribution == "Ubuntu"
+    - ansible_distribution_major_version == "18"
