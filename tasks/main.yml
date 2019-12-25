@@ -21,10 +21,6 @@
       {%- else -%}{{ dotnet_package }}
       {%- endif %}
 
-- name: Debug
-  debug:
-    msg: "SDK version: {{ sdk_version }}"
-
 - name: Install dotnet core SDK
   package:
     name: dotnet-sdk-{{ sdk_version }}
