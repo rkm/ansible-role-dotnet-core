@@ -8,7 +8,7 @@
   yum_repository:
     name: packages-microsoft-com-prod
     description: Microsoft .NET CentOS Repository
-    baseurl: https://packages.microsoft.com/config/centos/7/packages-microsoft-prod.rpm
+    baseurl: https://packages.microsoft.com/yumrepos/microsoft-rhel7.3-prod
     enabled: true
     gpgcheck: true
     gpgkey: https://packages.microsoft.com/keys/microsoft.asc
