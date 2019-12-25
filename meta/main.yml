@@ -1,8 +1,9 @@
 ---
 
 galaxy_info:
-  author: Iuri Gagnidze
-  description: Install .NET Core SDK/Runtime for Ubuntu/RHEL
+  role_name: dotnet-core
+  author: Ruairidh MacLeod
+  description: .NET Core SDK/Runtime for Linux
   license: license (BSD, MIT)
   min_ansible_version: 2.1
   platforms:
