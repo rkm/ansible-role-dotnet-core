@@ -1,10 +1,11 @@
 ---
 
 - include: rhel.yml
-  when: ansible_distribution == 'CentOS'
-        or ansible_distribution == 'Red Hat Enterprise Linux'
-        or ansible_distribution == 'RedHat'
-        or ansible_distribution == 'Amazon'
+  when: >
+    ansible_distribution == 'CentOS' or
+    ansible_distribution == 'Red Hat Enterprise Linux' or
+    ansible_distribution == 'RedHat' or
+    ansible_distribution == 'Amazon'
 
 - include: ubuntu.yml
   when: ansible_distribution == 'Debian' or ansible_distribution == 'Ubuntu'
@@ -13,13 +14,20 @@
   set_fact:
     is_travis: "{{ lookup('env', 'TRAVIS') | bool }}"
 
+- name: Set SDK version
+  set_fact:
+    sdk_version: >
+      "{% if is_travis %}
+         '{{ lookup('env', 'SDK_VERSION') }}'
+       {% else %}
+         '{{ dotnet_package }}'
+       {% endif %}"
+
 - name: Debug
   debug:
-    msg: Is Travis? {{ is_travis }}
+    msg: "SDK version: {{ sdk_version }}"
 
-# TODO Set sdk_version
-
-- name: Install dotnet core
+- name: Install dotnet core SDK
   package:
     name: "{{ sdk_version }}"
     state: present
