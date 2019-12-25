@@ -8,9 +8,8 @@ galaxy_info:
   platforms:
     - name: Debian
       versions:
-        - jessie
-        - strech
-        - buster
+        - strech  # 9
+        - buster  # 10
     - name: EL
       versions:
         - 7
@@ -20,8 +19,8 @@ galaxy_info:
         - 31
     - name: Ubuntu
       versions:
-        - xenial
-        - bionic
+        - xenial  # 16.04
+        - bionic  # 18.04
   galaxy_tags:
     - dotnet
     - core
