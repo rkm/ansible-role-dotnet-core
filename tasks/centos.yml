@@ -19,7 +19,7 @@
     state: present
     update_cache: true
 
-#- name: Install dependencies
+# - name: Install dependencies
 #  package:
 #    name: "{{ item }}"
 #    state: present

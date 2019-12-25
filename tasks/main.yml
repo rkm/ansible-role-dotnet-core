@@ -5,7 +5,7 @@
   when: ansible_distribution == 'Debian'
 
 - name: Include centos.yml
-  include: rhel.yml
+  include: centos.yml
   when: ansible_distribution == 'CentOS'
 
 - name: Include centos.yml
