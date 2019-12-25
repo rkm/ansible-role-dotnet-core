@@ -1,0 +1,28 @@
+---
+
+# yamllint disable
+# https://docs.microsoft.com/en-gb/dotnet/core/install/linux-package-manager-centos7
+# yamllint enable
+
+- name: Add yum repository
+  yum_repository:
+    name: packages-microsoft-com-prod
+    description: Microsoft .NET CentOS Repository
+    baseurl: https://packages.microsoft.com/config/centos/7/packages-microsoft-prod.rpm
+    enabled: true
+    gpgcheck: true
+    gpgkey: https://packages.microsoft.com/keys/microsoft.asc
+    state: present
+
+- name: Update yum cache
+  yum:
+    state: present
+    update_cache: true
+
+#- name: Install dependencies
+#  package:
+#    name: "{{ item }}"
+#    state: present
+#  with_items:
+#    - "libicu"
+#    - "libunwind"
