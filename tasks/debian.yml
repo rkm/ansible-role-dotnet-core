@@ -16,6 +16,9 @@
     mv prod.list /etc/apt/sources.list.d/microsoft-prod.list
     chown root:root /etc/apt/trusted.gpg.d/microsoft.asc.gpg
     chown root:root /etc/apt/sources.list.d/microsoft-prod.list
+  # NOTE: https://github.com/ansible/ansible-lint/issues/497
+  args:
+    executable: /bin/bash
   changed_when: false
 
 - name: Make sure HTTPS is supported by apt
