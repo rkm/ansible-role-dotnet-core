@@ -1,5 +1,8 @@
 ---
 
+- include: debian.yml
+  when: ansible_distribution == 'Debian'
+
 - include: rhel.yml
   when: >
     ansible_distribution == 'CentOS' or
@@ -8,7 +11,7 @@
     ansible_distribution == 'Amazon'
 
 - include: ubuntu.yml
-  when: ansible_distribution == 'Debian' or ansible_distribution == 'Ubuntu'
+  when: ansible_distribution == 'Ubuntu'
 
 - name: Detect TravisCI
   set_fact:
