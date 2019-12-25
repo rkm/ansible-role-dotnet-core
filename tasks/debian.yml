@@ -5,6 +5,12 @@
 # https://docs.microsoft.com/en-gb/dotnet/core/install/linux-package-manager-debian10
 # yamllint enable
 
+- name: Make sure HTTPS is supported by apt
+  apt:
+    name: apt-transport-https
+    state: present
+    update_cache: true
+
 - name: Register Microsoft key & repo
   shell: |
     set -o pipefail
@@ -20,12 +26,6 @@
   args:
     executable: /bin/bash
   changed_when: false
-
-- name: Make sure HTTPS is supported by apt
-  apt:
-    name: apt-transport-https
-    state: present
-    update_cache: true
 
 - name: Apt update
   apt:
