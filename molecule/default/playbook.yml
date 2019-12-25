@@ -10,3 +10,8 @@
       changed_when: false
   roles:
     - role: rkm.dotnet-core
+  post_tasks:
+    - name: Check dotnet version
+      command: dotnet --version
+      register: result
+      failed_when: result.rc != 0 or {{ sdk_version }} not in result.stdout
