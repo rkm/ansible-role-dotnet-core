@@ -16,7 +16,7 @@
 
 - name: Set SDK version
   set_fact:
-    sdk_version: >
+    sdk_version: >-
       {% if is_travis -%}{{ lookup('env', 'SDK_VERSION') }}
       {%- else -%}{{ dotnet_package }}
       {%- endif %}
@@ -27,6 +27,6 @@
 
 - name: Install dotnet core SDK
   package:
-    name: "{{ sdk_version }}"
+    name: dotnet-sdk-{{ sdk_version }}
     state: present
     update_cache: true
