@@ -14,5 +14,5 @@
     - name: Check dotnet version
       command: dotnet --version
       register: result
-      failed_when: result.rc != 0 or {{ sdk_version }} not in result.stdout
+      failed_when: result.rc != 0 or sdk_version not in result.stdout
       changed_when: false
