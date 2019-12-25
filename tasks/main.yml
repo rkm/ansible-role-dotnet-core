@@ -9,8 +9,18 @@
 - include: ubuntu.yml
   when: ansible_distribution == 'Debian' or ansible_distribution == 'Ubuntu'
 
+- name: Detect TravisCI
+  set_fact:
+    is_travis: "{{ lookup('env', 'TRAVIS') | bool }}"
+
+- name: Debug
+  debug:
+    msg: Is Travis? {{ is_travis }}
+
+# TODO Set sdk_version
+
 - name: Install dotnet core
   package:
-    name: "{{ dotnet_package }}"
+    name: "{{ sdk_version }}"
     state: present
     update_cache: true
