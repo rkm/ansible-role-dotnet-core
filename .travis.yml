@@ -13,7 +13,7 @@ services: docker
 
 env:
   global:
-    - ROLE_NAME: dotnet-core
+    - ROLE_NAME: dotnet_core
   jobs:
     - MOLECULE_DISTRO='centos7' SDK_VERSION='2.1'
     - MOLECULE_DISTRO='centos7' SDK_VERSION='2.2'
@@ -47,8 +47,8 @@ install:
   - pip install molecule docker
 
 before_script:
-  - cd ../
-  - mv ansible-role-$ROLE_NAME rkm.$ROLE_NAME
+  - cd ..
+  - mv ansible-role-* rkm.$ROLE_NAME
   - cd rkm.$ROLE_NAME
 
 script:
