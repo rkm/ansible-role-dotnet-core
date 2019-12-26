@@ -4,6 +4,6 @@
   hosts: all
   tasks:
     - lineinfile:
-        path: defaults/main.yml
+        path: ../../defaults/main.yml
         regexp: "^dotnet_package"
         line: "dotnet_package: {{ lookup('env','SDK_VERSION') }}"
