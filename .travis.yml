@@ -43,9 +43,9 @@ env:
     - MOLECULE_DISTRO='fedora30' SDK_VERSION='2.2'
     - MOLECULE_DISTRO='fedora30' SDK_VERSION='3.0'
 
-    - MOLECULE_DISTRO='fedora31' SDK_VERSION='2.1'
-    - MOLECULE_DISTRO='fedora31' SDK_VERSION='2.2'
-    - MOLECULE_DISTRO='fedora31' SDK_VERSION='3.0'
+    # - MOLECULE_DISTRO='fedora31' SDK_VERSION='2.1'
+    # - MOLECULE_DISTRO='fedora31' SDK_VERSION='2.2'
+    # - MOLECULE_DISTRO='fedora31' SDK_VERSION='3.0'
 
 install:
   - pip install molecule docker
