@@ -14,7 +14,7 @@ Available variables are listed below, along with [default values](defaults/main.
 
 ```yaml
 dotnet_package: "3.0"
-dotnet_debian_repo_gpg_key_url: "https://packages.microsoft.com/keys/microsoft.asc"
+microsoft_key_url: "https://packages.microsoft.com/keys/microsoft.asc"
 ```
 
 Currently supported SDK versions are:
