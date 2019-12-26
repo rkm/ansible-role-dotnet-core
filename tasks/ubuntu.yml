@@ -17,7 +17,7 @@
 
 - name: Add repo for Ubuntu Xenial
   apt_repository:
-    repo: "deb [arch=amd64] https://packages.microsoft.com/repos/
+    repo: "deb [arch=amd64] https://packages.microsoft.com/repos/\
           microsoft-ubuntu-xenial-prod xenial main"
     filename: "dotnetdev"
     state: present
@@ -28,7 +28,7 @@
 
 - name: Add repo for Ubuntu Bionic
   apt_repository:
-    repo: "deb [arch=amd64] https://packages.microsoft.com/repos/
+    repo: "deb [arch=amd64] https://packages.microsoft.com/repos/\
           microsoft-ubuntu-bionic-prod bionic main"
     filename: "dotnetdev"
     state: present
