@@ -4,9 +4,12 @@
   include: debian.yml
   when: ansible_distribution == 'Debian'
 
-- name: Include centos.yml
-  include: centos.yml
-  when: ansible_distribution == 'CentOS'
+- name: Include el.yml
+  include: el.yml
+  when: >
+    ansible_distribution == 'CentOS' or
+    ansible_distribution == 'RedHat' or
+    ansible_distribution == 'Amazon'
 
 - name: Include ubuntu.yml
   include: ubuntu.yml

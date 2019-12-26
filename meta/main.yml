@@ -11,7 +11,7 @@ galaxy_info:
       versions:
         - stretch  # 9
         - buster  # 10
-    - name: EL
+    - name: EL  # RHEL / CentOS
       versions:
         - 7
         - 8
