@@ -4,10 +4,12 @@
   hosts: all
   become: true
   pre_tasks:
-    - name: Update apt cache.
-      apt: update_cache=true cache_valid_time=600
-      when: ansible_os_family == 'Debian'
-      changed_when: false
+    - name: Set SDK version
+      tasks:
+        - lineinfile:
+            path: ../../defaults/main.yml
+            regexp: "^dotnet_package"
+            line: "dotnet_package: {{ lookup('env','SDK_VERSION') }}"
   roles:
     - role: rkm.dotnet-core
   post_tasks:
