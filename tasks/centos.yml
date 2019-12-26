@@ -11,18 +11,10 @@
     baseurl: https://packages.microsoft.com/yumrepos/microsoft-rhel7.3-prod
     enabled: true
     gpgcheck: true
-    gpgkey: https://packages.microsoft.com/keys/microsoft.asc
+    gpgkey: "{{ microsoft_key_url }}"
     state: present
 
 - name: Update yum cache
   yum:
     state: present
     update_cache: true
-
-# - name: Install dependencies
-#  package:
-#    name: "{{ item }}"
-#    state: present
-#  with_items:
-#    - "libicu"
-#    - "libunwind"

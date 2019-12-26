@@ -8,9 +8,13 @@
   include: centos.yml
   when: ansible_distribution == 'CentOS'
 
-- name: Include centos.yml
+- name: Include ubuntu.yml
   include: ubuntu.yml
   when: ansible_distribution == 'Ubuntu'
+
+- name: Include fedora.yml
+  include: fedora.yml
+  when: ansible_distribution == 'Fedora'
 
 - name: Detect TravisCI
   set_fact:
