@@ -7,9 +7,6 @@
 
 Installs the [.NET Core SDK/Runtime](https://www.microsoft.com/net). For supported systems, see [here](meta/main.yml).
 
-## Requirements
-
-This role only runs on Ubuntu, RHEL and its derivatives.
 
 ## Role Variables
 
@@ -37,7 +34,7 @@ None.
 ```yaml
 - hosts: servers
   roles:
-    - rkm.dotnet-core
+    - rkm.dotnet_core
 ```
 
 ## License
