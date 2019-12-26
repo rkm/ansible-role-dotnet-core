@@ -8,7 +8,7 @@
 
 - name: Import Microsoft APT key
   apt_key:
-    url: "{{ dotnet_debian_repo_gpg_key_url }}"
+    url: "{{ microsoft_key_url }}"
     state: present
 
 - name: Apt update
