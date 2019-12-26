@@ -10,7 +10,7 @@
         regexp: "^dotnet_package"
         line: "dotnet_package: {{ lookup('env','SDK_VERSION') }}"
   roles:
-    - role: rkm.dotnet-core
+    - role: rkm.dotnet_core
   post_tasks:
     - name: Check dotnet version
       command: dotnet --version

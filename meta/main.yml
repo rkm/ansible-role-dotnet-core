@@ -1,7 +1,7 @@
 ---
 
 galaxy_info:
-  role_name: dotnet-core
+  role_name: dotnet_core
   author: Ruairidh MacLeod
   description: .NET Core SDK/Runtime for Linux
   license: license (BSD, MIT)
