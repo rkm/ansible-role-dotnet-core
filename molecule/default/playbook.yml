@@ -5,15 +5,13 @@
   become: true
   pre_tasks:
     - name: Set SDK version
-      lineinfile:
-        path: defaults/main.yml
-        regexp: "^dotnet_package"
-        line: "dotnet_package: {{ lookup('env','SDK_VERSION') }}"
+      set_fact:
+        _sdk_version: "{{ lookup('env', 'SDK_VERSION') }}"
   roles:
     - role: rkm.dotnet_core
   post_tasks:
     - name: Check dotnet version
       command: dotnet --version
       register: result
-      failed_when: result.rc != 0 or sdk_version not in result.stdout
+      failed_when: _sdk_version not in result.stdout
       changed_when: false

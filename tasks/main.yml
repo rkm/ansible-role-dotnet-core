@@ -16,19 +16,13 @@
   include: fedora.yml
   when: ansible_distribution == 'Fedora'
 
-# - name: Detect TravisCI
-#   set_fact:
-#     is_travis: "{{ lookup('env', 'TRAVIS') | bool }}"
-
-# - name: Set SDK version
-#   set_fact:
-#     sdk_version: >-
-#       {% if is_travis -%}{{ lookup('env', 'SDK_VERSION') }}
-#       {%- else -%}{{ dotnet_package }}
-#       {%- endif %}
+- name: Determine SDK version
+  set_fact:
+    _sdk_version: "{{ dotnet_package }}"
+  when: _sdk_version is not defined
 
 - name: Install dotnet core SDK
   package:
-    name: dotnet-sdk-{{ dotnet_package }}
+    name: dotnet-sdk-{{ _sdk_version }}
     state: present
     update_cache: true
