@@ -1,13 +1,13 @@
 ---
 
-- name: Import Microsoft APT key
-  apt_key:
-    url: "{{ microsoft_key_url }}"
+- name: Import Microsoft RPM key
+  rpm_key:
+    key: "{{ microsoft_key_url }}"
     state: present
 
 - name: Download Microsoft repo
   get_url:
-    url: "https://packages.microsoft.com/config/fedora/
+    url: "https://packages.microsoft.com/config/fedora/\
          {{ ansible_distribution_major_version }}/prod.repo"
     dest: /etc/yum.repos.d/microsoft-prod.repo
 
