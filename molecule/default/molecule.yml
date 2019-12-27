@@ -13,10 +13,7 @@ lint:
 
 platforms:
   - name: instance
-    image: >
-      "{% if ${MOLECULE_DISTRO} == 'ubuntu1904' %}ubuntu:19.04
-       {%- else %}geerlingguy/docker-${MOLECULE_DISTRO}-ansible:latest
-       {%- endif %}"
+    image: "geerlingguy/docker-${MOLECULE_DISTRO}-ansible:latest"
     command: ${MOLECULE_DOCKER_COMMAND:-""}
     volumes:
       - /sys/fs/cgroup:/sys/fs/cgroup:ro
