@@ -4,6 +4,7 @@
   package:
     name: gpg
     state: present
+  failed_when: false
 
 - name: Include debian.yml
   include: debian.yml
