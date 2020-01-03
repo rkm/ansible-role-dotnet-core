@@ -1,5 +1,10 @@
 ---
 
+- name: Install gpg
+  package:
+    name: gpg
+    state: present
+
 - name: Include debian.yml
   include: debian.yml
   when: ansible_distribution == 'Debian'
