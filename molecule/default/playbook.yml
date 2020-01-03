@@ -2,7 +2,7 @@
 
 - name: Converge
   hosts: all
-  become: true
+  # become: true
   pre_tasks:
     - name: Set SDK version
       set_fact:
