@@ -15,6 +15,9 @@ platforms:
   - name: instance
     image: ${MOLECULE_DISTRO}
     command: ${MOLECULE_DOCKER_COMMAND:-""}
+    tmpfs:
+      - /run
+      - /tmp
     volumes:
       - /sys/fs/cgroup:/sys/fs/cgroup:ro
     privileged: true
