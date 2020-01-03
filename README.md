@@ -1,6 +1,6 @@
 
 [![Build Status](https://travis-ci.org/rkm/ansible-role-dotnet-core.svg?branch=master)](https://travis-ci.org/rkm/ansible-role-dotnet-core)
-[![Ansible Galaxy](https://img.shields.io/ansible/role/45475.svg)](https://galaxy.ansible.com/rkm/dotnet-core)
+[![Ansible Galaxy](https://img.shields.io/ansible/role/45475.svg)](https://galaxy.ansible.com/rkm/dotnet_core)
 
 
 # Ansible Role: .Net Core SDK/Runtime
