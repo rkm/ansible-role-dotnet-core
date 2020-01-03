@@ -23,6 +23,8 @@ galaxy_info:
       versions:
         - xenial  # 16.04
         - bionic  # 18.04
+        # NOTE(rkm 2020-01-03) We can't include this in the CI build until we
+        # get an appropriate Docker image
         - disco dingo  # 19.04
   galaxy_tags:
     - csharp

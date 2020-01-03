@@ -5,7 +5,9 @@
 
 # Ansible Role: .Net Core SDK/Runtime
 
-Installs the [.NET Core SDK/Runtime](https://www.microsoft.com/net). For supported systems, see [here](meta/main.yml). Note that Ubuntu 19.04 (disco dingo) is not currently tested against.
+Installs the [.NET Core SDK/Runtime](https://www.microsoft.com/net). For supported systems, see [here](meta/main.yml).
+
+Note that Ubuntu 19.04 (disco dingo) should be supported, but is not currently included in the CI build.
 
 
 ## Role Variables
