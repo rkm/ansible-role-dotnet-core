@@ -6,6 +6,10 @@
     - name: Set SDK version
       set_fact:
         _sdk_version: "{{ lookup('env', 'SDK_VERSION') }}"
+    - name: Install python
+      package:
+        name: python
+        state: present
   roles:
     - role: rkm.dotnet_core
   post_tasks:
