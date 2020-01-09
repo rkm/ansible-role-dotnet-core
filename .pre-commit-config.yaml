@@ -23,8 +23,3 @@ repos:
     hooks:
       - id: ansible-lint
         files: \.(yaml|yml)$
-  - repo: https://github.com/adrienverge/yamllint
-    rev: v1.19.0
-    hooks:
-      - id: yamllint
-        args: [-cmolecule/default/yaml-lint.yml]
