@@ -5,13 +5,9 @@
 # yamllint enable
 
 - name: Add yum repository
-  yum_repository:
-    name: packages-microsoft-com-prod
-    description: Microsoft .NET CentOS Repository
-    baseurl: https://packages.microsoft.com/yumrepos/microsoft-rhel7.3-prod
-    enabled: true
-    gpgcheck: true
-    gpgkey: "{{ microsoft_key_url }}"
+  yum:
+    name: "https://packages.microsoft.com/config/centos/7/\
+          packages-microsoft-prod.rpm"
     state: present
 
 - name: Update yum cache
